@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Services
 {
-    public class CategoryService : ICategoryService
+    public class CategoryRepository : ICategoryRepository
     {
         private ReadLaterDataContext _ReadLaterDataContext;
-        public CategoryService(ReadLaterDataContext readLaterDataContext) 
+        public CategoryRepository(ReadLaterDataContext readLaterDataContext) 
         {
             _ReadLaterDataContext = readLaterDataContext;            
         }

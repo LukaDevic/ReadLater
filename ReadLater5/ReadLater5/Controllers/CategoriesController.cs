@@ -1,18 +1,14 @@
 ﻿using Entity;
 using Microsoft.AspNetCore.Mvc;
-using Services;
-using System;
+using ReadLater5.Repositories.Categories;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
 
 namespace ReadLater5.Controllers
 {
     public class CategoriesController : Controller
     {
-        ICategoryService _categoryService;
-        public CategoriesController(ICategoryService categoryService)
+        ICategoryRepository _categoryService;
+        public CategoriesController(ICategoryRepository categoryService)
         {
             _categoryService = categoryService;
         }

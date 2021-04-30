@@ -1,13 +1,9 @@
 ﻿using Entity;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Services
+namespace ReadLater5.Repositories.Categories
 {
-    public interface ICategoryService
+    public interface ICategoryRepository
     {
         Category CreateCategory(Category category);
         List<Category> GetCategories();
