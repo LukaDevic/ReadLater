@@ -1,8 +1,9 @@
-﻿using ReadLater5.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using ReadLater5.Data;
 using ReadLater5.Entity;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 
 namespace ReadLater5.Repositories.Bookmarks
 {
@@ -14,27 +15,27 @@ namespace ReadLater5.Repositories.Bookmarks
             _readLaterDataContext = readLaterDataContext;
         }
 
-        public IList<Bookmark> GetBookmarks()
+        public async Task<IList<Bookmark>> GetBookmarksAsync()
         {
-            return _readLaterDataContext.Bookmark.ToList();
+            var bookmarks = await _readLaterDataContext.Bookmark.ToListAsync();
+            return bookmarks;
         }
-
-        public Bookmark GetBookmark(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Bookmark CrateBookmark(Bookmark bookmark)
+        public Task<Bookmark> GetBookmarkAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateBookmark(Bookmark bookmark)
+        public async Task CrateBookmarkAsync(Bookmark bookmark)
+        {
+            await _readLaterDataContext.AddAsync(bookmark);
+            await _readLaterDataContext.SaveChangesAsync();
+        }
+        public Task UpdateBookmarkAsync(Bookmark bookmark)
         {
             throw new NotImplementedException();
         }
 
-        public void DeleteBookmark(Bookmark bookmark)
+        public Task DeleteBookmarkAsync(Bookmark bookmark)
         {
             throw new NotImplementedException();
         }
