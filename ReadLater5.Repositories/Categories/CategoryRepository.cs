@@ -13,19 +13,6 @@ namespace ReadLater5.Repositories.Categories
             _ReadLaterDataContext = readLaterDataContext;            
         }
 
-        public Category CreateCategory(Category category)
-        {
-            _ReadLaterDataContext.Add(category);
-            _ReadLaterDataContext.SaveChanges();
-            return category;
-        }
-
-        public void UpdateCategory(Category category)
-        {
-            _ReadLaterDataContext.Update(category);
-            _ReadLaterDataContext.SaveChanges();
-        }
-
         public List<Category> GetCategories()
         {
             return _ReadLaterDataContext.Categories.ToList();
@@ -39,6 +26,19 @@ namespace ReadLater5.Repositories.Categories
         public Category GetCategory(string Name)
         {
             return _ReadLaterDataContext.Categories.Where(c => c.Name == Name).FirstOrDefault();
+        }
+
+        public Category CreateCategory(Category category)
+        {
+            _ReadLaterDataContext.Add(category);
+            _ReadLaterDataContext.SaveChanges();
+            return category;
+        }
+
+        public void UpdateCategory(Category category)
+        {
+            _ReadLaterDataContext.Update(category);
+            _ReadLaterDataContext.SaveChanges();
         }
 
         public void DeleteCategory(Category category)
