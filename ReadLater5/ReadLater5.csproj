@@ -17,12 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Bookmark\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ReadLater5.Data\ReadLater5.Data.csproj" />
     <ProjectReference Include="..\ReadLater5.Repositories\ReadLater5.Repositories.csproj" />
+    <ProjectReference Include="..\ReadLater5.Services\ReadLater5.Services.csproj" />
   </ItemGroup>
 
 </Project>
