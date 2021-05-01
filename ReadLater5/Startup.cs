@@ -7,7 +7,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ReadLater5.Data;
+using ReadLater5.Repositories.Bookmarks;
 using ReadLater5.Repositories.Categories;
+using System;
 
 namespace ReadLater5
 {
@@ -23,6 +25,8 @@ namespace ReadLater5
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
+
             services.AddDbContext<ReadLaterDataContext>(options =>
                options.UseSqlServer(
                    Configuration.GetConnectionString("DefaultConnection")));
@@ -32,9 +36,10 @@ namespace ReadLater5
                 .AddEntityFrameworkStores<ReadLaterDataContext>();
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IBookmarksRepository, BookmarksRepository>();
 
-            services.AddControllersWithViews();
-            services.AddMediatR(typeof(Startup));
+            var assembly = AppDomain.CurrentDomain.Load("ReadLater5.Services");
+            services.AddMediatR(assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
