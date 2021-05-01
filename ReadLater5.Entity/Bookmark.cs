@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Entity
+namespace ReadLater5.Entity
 {
     public class Bookmark
     {

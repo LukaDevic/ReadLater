@@ -1,6 +1,6 @@
-﻿using Entity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ReadLater5.Entity;
 
 namespace ReadLater5.Data
 {

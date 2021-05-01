@@ -17,13 +17,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Data\Data\Data.csproj" />
-    <ProjectReference Include="..\..\Entity\Entity\Entity.csproj" />
-    <ProjectReference Include="..\..\Services\Services\ReadLater5.Repositories.csproj" />
+    <Folder Include="Models\Bookmark\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Bookmark\" />
+    <ProjectReference Include="..\ReadLater5.Data\ReadLater5.Data.csproj" />
+    <ProjectReference Include="..\ReadLater5.Repositories\ReadLater5.Repositories.csproj" />
   </ItemGroup>
 
 </Project>

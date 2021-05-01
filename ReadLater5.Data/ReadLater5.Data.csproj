@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Entity\Entity\Entity.csproj" />
+    <ProjectReference Include="..\ReadLater5.Entity\ReadLater5.Entity.csproj" />
   </ItemGroup>
 
 </Project>
