@@ -4,4 +4,13 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ReadLater5.Entity\ReadLater5.Entity.csproj" />
+    <ProjectReference Include="..\ReadLater5.Repositories\ReadLater5.Repositories.csproj" />
+  </ItemGroup>
+
 </Project>
