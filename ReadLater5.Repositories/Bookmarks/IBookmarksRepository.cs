@@ -1,14 +1,15 @@
 ﻿using ReadLater5.Entity;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ReadLater5.Repositories.Bookmarks
 {
     public interface IBookmarksRepository
     {
-        IList<Bookmark> GetBookmarks();
-        Bookmark GetBookmark(int id);
-        Bookmark CrateBookmark(Bookmark bookmark);
-        void UpdateBookmark(Bookmark bookmark);
-        void DeleteBookmark(Bookmark bookmark);
+        Task<IList<Bookmark>> GetBookmarksAsync();
+        Task<Bookmark> GetBookmarkAsync(int id);
+        Task CrateBookmarkAsync(Bookmark bookmark);
+        Task UpdateBookmarkAsync(Bookmark bookmark);
+        Task DeleteBookmarkAsync(Bookmark bookmark);
     }
 }
