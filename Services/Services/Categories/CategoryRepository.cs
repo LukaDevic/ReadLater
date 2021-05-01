@@ -1,12 +1,9 @@
-﻿using Data;
-using Entity;
-using System;
+﻿using ReadLater5.Data;
+using ReadLater5.Entity;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Services
+namespace ReadLater5.Repositories.Categories
 {
     public class CategoryRepository : ICategoryRepository
     {
