@@ -17,7 +17,7 @@ namespace ReadLater5.Repositories.Bookmarks
 
         public async Task<IList<Bookmark>> GetBookmarksAsync()
         {
-            var bookmarks = await _readLaterDataContext.Bookmark.ToListAsync();
+            var bookmarks = await _readLaterDataContext.Bookmark.Include(x => x.Category).ToListAsync();
             return bookmarks;
         }
         public Task<Bookmark> GetBookmarkAsync(int id)
