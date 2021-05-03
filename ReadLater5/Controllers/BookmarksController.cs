@@ -32,7 +32,7 @@ namespace ReadLater5.Controllers
             {
                 Categories = _categoryService.GetCategories()
             };
-            return View(viewModel);
+            return View("BookmarksForm", viewModel);
         }
 
         [HttpPost]
