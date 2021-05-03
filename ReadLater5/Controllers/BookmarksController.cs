@@ -35,7 +35,9 @@ namespace ReadLater5.Controllers
             return View(viewModel);
         }
 
-        public async Task<IActionResult> Crate(BookmarkViewModel viewModel)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Save(BookmarkViewModel viewModel)
         {
             var bookmark = new Bookmark
             {
@@ -46,7 +48,7 @@ namespace ReadLater5.Controllers
             };
             await _mediator.Send(new CreateBookmark.Command(bookmark));
 
-            return View("Index");
+            return RedirectToAction("Index");
         }
     }
 }
